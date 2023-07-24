@@ -1,0 +1,1 @@
+This website serves as practice for website design.
