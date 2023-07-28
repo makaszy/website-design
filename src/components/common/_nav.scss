@@ -1,0 +1,12 @@
+@use "../../themes/colors" as *;
+
+@mixin nav-ul {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+@mixin nav-link($color: $black) {
+  color: $color;
+  text-decoration: none;
+}
