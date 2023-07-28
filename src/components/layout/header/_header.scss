@@ -1,0 +1,126 @@
+@use "../../../themes/colors" as *;
+@use "../../common/hamburger-menu" as *;
+@use "../../common/nav" as *;
+@use "../../common/decoration" as *;
+
+.header {
+  padding: 20px 30px;
+  background-color: var(--header-background);
+  color: var(--header-color);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.header-div--top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+//Hamburger Btn
+
+.p-header-div__btn {
+  width: 20px;
+  height: 20px;
+}
+
+.header-div__btn {
+  @extend %btn--hamburger;
+  font-size: 0px;
+  border: none;
+  background-color: inherit;
+}
+
+.p-btn__span--decoration {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+}
+
+.btn__span--decoration {
+  @extend %span--decoration;
+  background: var(--header-color);
+  border-radius: 9px;
+}
+
+//NAVIGATION
+
+.header__nav {
+  width: 100vw;
+  height: 100vh;
+  background-color: inherit; 
+}
+
+.li__a--head {
+  @include nav-link(var(--header-color));
+}
+
+.header-nav__ul {
+  @include nav-ul;
+  font-size: 23px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+
+@media screen and (min-width: 875px) {
+  .header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; 
+  }
+
+  .p-header-div__heading {
+    position: absolute;
+    left: 20px;
+  }
+  .p-header-div__heading:hover {
+    opacity: 0.6;
+    transform: scale(0.9);
+    transition: 0.4s;
+  }
+  
+  .header-div__btn {
+  display: none;
+  }
+
+  .header__nav {
+    display: contents;  
+  }
+
+  .header-nav__ul {
+    flex-direction: row;
+    font-size: 16px;
+  }
+
+  //Decoration Underline for Navigation
+  //work
+  .header-nav__ul li:first-of-type {
+    @include decoration--underline(38px, 1px, auto, -5px, 1px, $black)
+  }
+  //services
+  .header-nav__ul li:nth-of-type(2) {
+    @include decoration--underline(57px, 1px, auto, -5px, 1px, $black)
+  }
+  //about
+  .header-nav__ul li:nth-of-type(3) {
+    @include decoration--underline(42px, 1px, auto, -5px, 1px, $black)
+  }
+  //method
+  .header-nav__ul li:nth-of-type(4) {
+    @include decoration--underline(53px, 1px, auto, -5px, 1px, $black)
+  }
+  //blog
+  .header-nav__ul li:nth-of-type(5) {
+    @include decoration--underline(35px, 1px, auto, -5px, 1px, $black)
+  }
+  //contact us 
+  .header-nav__ul li:nth-of-type(6) {
+    @include decoration--underline(75px, 1px, auto, -5px, 1px, $black)
+  }
+}

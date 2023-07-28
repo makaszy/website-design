@@ -1,0 +1,289 @@
+:root {
+  --header-background: rgba(255, 255, 255, 1);
+  --header-color: rgba(0, 0, 0, 1);
+  --accent: rgba(255, 104, 87, 1);
+}
+
+.dark {
+  --header-background: rgba(0, 0, 0, 1);
+  --header-color: rgba(255, 255, 255, 1);
+}
+
+.header-div__btn {
+  position: relative;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.btn__span--decoration {
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+
+.btn__span--decoration:nth-child(1) {
+  top: 0px;
+}
+
+.btn__span--decoration:nth-child(2),
+.btn__span--decoration:nth-child(3) {
+  top: 7px;
+}
+
+.btn__span--decoration:nth-child(4) {
+  top: 15px;
+}
+
+.open.header-div__btn .btn__span--decoration:nth-child(1) {
+  top: 18px;
+  width: 0%;
+  left: 50%;
+}
+
+.open.header-div__btn .btn__span--decoration:nth-child(2) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.open.header-div__btn .btn__span--decoration:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.open.header-div__btn .btn__span--decoration:nth-child(4) {
+  top: 18px;
+  width: 0%;
+  left: 50%;
+}
+
+.hidden-nav {
+  display: none;
+}
+
+.header {
+  padding: 20px 30px;
+  background-color: var(--header-background);
+  color: var(--header-color);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.header-div--top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.p-header-div__btn {
+  width: 20px;
+  height: 20px;
+}
+
+.header-div__btn {
+  font-size: 0px;
+  border: none;
+  background-color: inherit;
+}
+
+.p-btn__span--decoration {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+}
+
+.btn__span--decoration {
+  background: var(--header-color);
+  border-radius: 9px;
+}
+
+.header__nav {
+  width: 100vw;
+  height: 100vh;
+  background-color: inherit;
+}
+
+.li__a--head {
+  color: var(--header-color);
+  text-decoration: none;
+}
+
+.header-nav__ul {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+  font-size: 23px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+@media screen and (min-width: 875px) {
+  .header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  .p-header-div__heading {
+    position: absolute;
+    left: 20px;
+  }
+  .p-header-div__heading:hover {
+    opacity: 0.6;
+    transform: scale(0.9);
+    transition: 0.4s;
+  }
+  .header-div__btn {
+    display: none;
+  }
+  .header__nav {
+    display: contents;
+  }
+  .header-nav__ul {
+    flex-direction: row;
+    font-size: 16px;
+  }
+  .header-nav__ul li:first-of-type {
+    position: relative;
+  }
+  .header-nav__ul li:first-of-type::before {
+    content: "";
+    position: absolute;
+    width: 38px;
+    height: 1px;
+    transform: scaleX(0);
+    top: auto;
+    bottom: -5px;
+    left: 1px;
+    background-color: rgb(0, 0, 0);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  .header-nav__ul li:first-of-type:hover:before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  .header-nav__ul li:nth-of-type(2) {
+    position: relative;
+  }
+  .header-nav__ul li:nth-of-type(2)::before {
+    content: "";
+    position: absolute;
+    width: 57px;
+    height: 1px;
+    transform: scaleX(0);
+    top: auto;
+    bottom: -5px;
+    left: 1px;
+    background-color: rgb(0, 0, 0);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  .header-nav__ul li:nth-of-type(2):hover:before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  .header-nav__ul li:nth-of-type(3) {
+    position: relative;
+  }
+  .header-nav__ul li:nth-of-type(3)::before {
+    content: "";
+    position: absolute;
+    width: 42px;
+    height: 1px;
+    transform: scaleX(0);
+    top: auto;
+    bottom: -5px;
+    left: 1px;
+    background-color: rgb(0, 0, 0);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  .header-nav__ul li:nth-of-type(3):hover:before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  .header-nav__ul li:nth-of-type(4) {
+    position: relative;
+  }
+  .header-nav__ul li:nth-of-type(4)::before {
+    content: "";
+    position: absolute;
+    width: 53px;
+    height: 1px;
+    transform: scaleX(0);
+    top: auto;
+    bottom: -5px;
+    left: 1px;
+    background-color: rgb(0, 0, 0);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  .header-nav__ul li:nth-of-type(4):hover:before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  .header-nav__ul li:nth-of-type(5) {
+    position: relative;
+  }
+  .header-nav__ul li:nth-of-type(5)::before {
+    content: "";
+    position: absolute;
+    width: 35px;
+    height: 1px;
+    transform: scaleX(0);
+    top: auto;
+    bottom: -5px;
+    left: 1px;
+    background-color: rgb(0, 0, 0);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  .header-nav__ul li:nth-of-type(5):hover:before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  .header-nav__ul li:nth-of-type(6) {
+    position: relative;
+  }
+  .header-nav__ul li:nth-of-type(6)::before {
+    content: "";
+    position: absolute;
+    width: 75px;
+    height: 1px;
+    transform: scaleX(0);
+    top: auto;
+    bottom: -5px;
+    left: 1px;
+    background-color: rgb(0, 0, 0);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  .header-nav__ul li:nth-of-type(6):hover:before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+}
+
+/*# sourceMappingURL=output.css.map */
