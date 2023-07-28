@@ -1,0 +1,25 @@
+@use "../../themes/colors" as *;
+
+//decoration underline animation
+@mixin decoration--underline($width, $height, $top, $bottom, $left,  $color) { 
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: $width;//140px;
+    height: $height;
+    transform: scaleX(0); 
+    top: $top;
+    bottom: $bottom;
+    left: $left;
+    background-color: $color;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+
+  &:hover:before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+}
