@@ -1,4 +1,7 @@
+@use "./components/common/body";
+
 @use "./components/common/decoration";
 @use "./components/common/hamburger-menu";
 @use "./components/common/nav";
 @use "./components/layout/header/header";
+@use "./components/layout/main/main-section"
