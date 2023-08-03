@@ -1,0 +1,89 @@
+@use "../../../themes/colors" as *;
+@use "../../common/nav" as *;
+@use "../../common/svg-icon" as *;
+
+.footer {
+  position: relative;
+  background-color: $black; 
+  color: $white; 
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.footer__contact-div {
+  text-align: end;
+}
+
+.footer__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-nav__ul {
+  @include nav-ul;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: start;
+}
+
+.li__a--foot {
+  @include nav-link($color: $white);
+  font-size: 0px;
+  position: relative;
+  &:hover {
+    filter: invert(41%) sepia(66%) saturate(617%) hue-rotate(314deg) brightness(109%) contrast(87%)
+  }
+}
+
+@mixin svg-icon($background-image, $size) {
+  content: "";
+  position: absolute;
+  background-image:$background-image;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: $size;
+  height: $size;
+}
+
+.li__a--facebook::after {
+  @include svg-icon($background-image: url("../../images/facebook--white.svg"), $size: 18px);
+  left: -5px;
+}
+
+.li__a--instagram::after {
+  @include svg-icon($background-image: url("../../images/instagram--white.svg"), $size: 18px);
+  left: -5px;
+}
+.li__a--twitter::after {
+  @include svg-icon($background-image: url("../../images/twitter--white.svg"), $size: 18px);
+  left: -5px;
+}
+
+.footer__contact-div {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.attribution {
+  text-align: center;
+  font-size: 12px;
+  position: absolute;
+  bottom: 20px;
+  width: fit-content;
+  left: 0px;
+  right: 0px;
+  margin: auto;
+  color: $white;
+  display: flex;
+  flex-direction: column;
+}
+
+.attribution a {
+  color: $white;
+  
+}
