@@ -28,6 +28,12 @@ function createTitle() {
   return heading;
 }
 
+function setProject(project) {
+  document.querySelector(".p-showreel__img").setAttribute("src", project.image);
+  document.querySelector(".p-showreel__img").setAttribute("alt", project.alt);
+  document.querySelector(".p-showreel__title").textContent = project.title;
+}
+
 function createShowreelBlock() {
   const div = createDivOuter();
   const divIn = createDivInner();
@@ -44,5 +50,4 @@ function deleteShowreelBlock() {
   showreel.remove();
 }
 
-
-export {createShowreelBlock, deleteShowreelBlock} 
+export {createShowreelBlock, deleteShowreelBlock, setProject} 

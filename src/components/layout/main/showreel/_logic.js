@@ -1,15 +1,9 @@
-import { createShowreelBlock, deleteShowreelBlock } from "./_display";
+import { createShowreelBlock, deleteShowreelBlock, setProject } from "./_display";
 
 function delay(time) {
   return new Promise(resolve => {
     setTimeout(resolve, time)
   })
-}
-
-function setProject(project) {
-  document.querySelector(".p-showreel__img").setAttribute("src", project.image);
-  document.querySelector(".p-showreel__img").setAttribute("alt", project.alt);
-  document.querySelector(".p-showreel__title").textContent = project.title;
 }
 
 async function postProject(project) {
