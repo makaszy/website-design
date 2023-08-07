@@ -1,8 +1,8 @@
 @use "../../../themes/colors" as *;
 @use "../../common/nav" as *;
-@use "../../common/svg-icon" as *;
 
 .footer {
+  padding: 20px 30px;
   position: relative;
   background-color: $black; 
   color: $white; 
@@ -50,16 +50,16 @@
 }
 
 .li__a--facebook::after {
-  @include svg-icon($background-image: url("../../images/facebook--white.svg"), $size: 18px);
+  @include svg-icon($background-image: url("../../../../src/images/facebook--white.svg"), $size: 18px);
   left: -5px;
 }
 
 .li__a--instagram::after {
-  @include svg-icon($background-image: url("../../images/instagram--white.svg"), $size: 18px);
+  @include svg-icon($background-image: url("../../../../src/images/instagram--white.svg"), $size: 18px);
   left: -5px;
 }
 .li__a--twitter::after {
-  @include svg-icon($background-image: url("../../images/twitter--white.svg"), $size: 18px);
+  @include svg-icon($background-image: url("../../../../src/images/twitter--white.svg"), $size: 18px);
   left: -5px;
 }
 
